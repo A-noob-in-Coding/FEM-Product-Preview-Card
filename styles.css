@@ -1,0 +1,133 @@
+:root{
+    
+--Dark-cyan: hsl(158, 36%, 37%);
+--Cream: hsl(30, 38%, 92%);
+--Very-dark-blue: hsl(212, 21%, 14%);
+--Dark-grayish-blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+
+}
+
+
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.mobile-img{
+    display: none;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+body{
+    font-family: "Montserrat";
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Cream);
+}
+
+main{
+    border-radius: 10px;
+    background-color: var(--White);
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ 
+main .image-container{
+    figure{
+        margin: 0;
+        img{
+            border-radius: 10px 0px 0px 10px;
+        }
+    }
+
+}
+
+
+main .product-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 1rem;
+    p{
+        color: var(--Dark-grayish-blue);
+    }
+    button{
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--Dark-cyan);
+        color: var(--White);
+        border: none;
+        border-radius: 10px;
+    }
+
+    button:hover{
+        background-color: var(--Very-dark-blue);
+        cursor: pointer;
+    }
+
+    button::before{
+        content: url("/images/icon-cart.svg");
+        padding-right: 0.5rem;
+        vertical-align: middle;
+    }
+
+    .product-type{
+        letter-spacing: 0.25rem;
+    }
+
+    .product-name{
+        font-family: "Fraunces";
+        font-size: 1.7rem;
+    }
+
+    .price{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        .discount{
+            font-size: 1.7rem;
+            font-family: "Fraunces";
+            font-weight: bold;
+            color: var(--Dark-cyan);
+        }
+        .original{
+            text-decoration: line-through;
+        }
+    }
+}
+
+@media screen and (max-width:48em) {
+    .mobile-img{
+        display: block;
+    }
+    main{
+        width: 90%;
+        flex-direction: column;
+        .image-container{
+
+            figure{
+                img{
+                    border-radius: 10px 10px 0px 0px;
+                }
+            }
+        }
+    }
+
+    .desktop-img{
+        display: none;
+    }
+}
